@@ -1,5 +1,6 @@
 let grid = document.querySelector('.grid');
 
+
 for(let i=0; i<16; i++){
     let row = document.createElement('div');
     for(let j=0; j<16; j++){
@@ -7,9 +8,12 @@ for(let i=0; i<16; i++){
         box.style.border = '1px solid black';
         box.style.minWidth = '32px';
         box.style.minHeight = '32px';
-
+        box.addEventListener('mouseenter', () => {
+            box.style.backgroundColor = 'black';
+        })
         row.appendChild(box);
     }
     row.style.display = 'flex';
+    row.className = 'row';
     grid.appendChild(row);
 }

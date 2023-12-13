@@ -8,9 +8,10 @@
 </head>
 <body>
     <script type="text/javascript" src="./script.js" defer></script>
-    <h1>Type in how many pixels per line there should be in the grid:</h1>
-    <input type="text"></input>
-    <button id="create">Create grid</button>
+    <div class="length-container">
+        <p>Length</p>
+        <input type="range" min="1" max="100" value="16" class="slider"></input>
+    </div>
     <div class="grid"></div>
 </body>
 </html>

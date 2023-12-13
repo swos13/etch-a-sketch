@@ -1,5 +1,8 @@
 let grid = document.querySelector('.grid');
-const button = document.querySelector('#create');
+const body = document.querySelector('body');
+const slider = document.querySelector('.slider');
+const lengthContainer = document.querySelector('.length-container');
+let lengthPara = document.createElement('p');
 
 function clearGrid(){
     while(grid.firstChild)
@@ -20,15 +23,16 @@ function createGrid(number){
         }
         
         row.className = 'row';
+        lengthPara.textContent = `${number}x${number}`;
+        lengthContainer.insertBefore(lengthPara, slider);
         grid.appendChild(row);
     }
 }
 
-button.addEventListener('click', () =>{
+slider.addEventListener('input', () =>{
     clearGrid();
-    let number = parseInt(document.querySelector('input').value);
-    createGrid(number);
-});
+    createGrid(slider.value);
+})
 
 createGrid(16);
 

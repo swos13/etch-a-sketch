@@ -16,6 +16,19 @@ button {
     margin-bottom: 32px;
 }
 
+.length-container{
+    text-align: center;
+}
+
+.length-container p{
+    margin-bottom: 0;
+    font: bold 18px Helvetica;
+}
+
+.slider{
+    margin-top: 8px;
+}
+
 .grid{
     border: 1px solid black;
     width: 960px;

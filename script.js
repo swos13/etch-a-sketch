@@ -56,8 +56,7 @@ rainbowCheckbox.addEventListener('change', () => {
 clearBtn.addEventListener('click', () => {
     let boxes = document.querySelectorAll('.box');
     boxes.forEach((box) => {
-        box.style.backgroundColor = 'white';
-        
+        box.style.backgroundColor = 'white';     
     })
 })
 

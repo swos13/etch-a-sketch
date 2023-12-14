@@ -1,8 +1,11 @@
-let grid = document.querySelector('.grid');
 const body = document.querySelector('body');
 const slider = document.querySelector('.slider');
-const lengthContainer = document.querySelector('.length-container');
-let lengthPara = document.createElement('p');
+const lengthContainer = document.querySelector('#length-container');
+const lengthPara = document.createElement('p');
+const rainbowCheckbox = document.querySelector('#rainbow');
+const grid = document.querySelector('.grid');
+let rainbowMode = false;
+
 
 function clearGrid(){
     while(grid.firstChild)
@@ -16,9 +19,10 @@ function createGrid(number){
             let box = document.createElement('div');
             box.style.border = '1px solid black';
             box.style.flexGrow = '1';
-            box.addEventListener('mouseenter', () => {
-                box.style.backgroundColor = 'black';
-            })
+            box.className = 'box';
+            box.onmouseenter = () => {
+                setColor(box)
+            };
             row.appendChild(box);
         }
         
@@ -29,9 +33,33 @@ function createGrid(number){
     }
 }
 
+function setColor(box){
+    box.style.backgroundColor = rainbowMode ? getRandomColor() : 'black';
+}
+
+function setColorListenerOnAllBoxes(){
+    let boxes = document.querySelectorAll('.box');
+    boxes.forEach((box) => {
+        box.ELEMENT_NODE.onmouseenter = () => {
+            setColor(box.ELEMENT_NODE);
+        }
+    })
+}
+
+function getRandomColor(){
+    return `rgb(${Math.random() * 255},
+                ${Math.random() * 255},
+                ${Math.random() * 255})`
+}
+
 slider.addEventListener('input', () =>{
     clearGrid();
     createGrid(slider.value);
+})
+
+
+rainbowCheckbox.addEventListener('change', () => {
+    rainbowMode = rainbowMode ? false : true;
 })
 
 createGrid(16);

@@ -27,7 +27,7 @@ function createGrid(number){
         }
         
         row.className = 'row';
-        lengthPara.textContent = `${number}x${number}`;
+        lengthPara.textContent = `Length ${number}x${number}`;
         lengthContainer.insertBefore(lengthPara, slider);
         grid.appendChild(row);
     }

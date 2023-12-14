@@ -1,8 +1,9 @@
 let grid = document.querySelector('.grid');
 const body = document.querySelector('body');
 const slider = document.querySelector('.slider');
-const lengthContainer = document.querySelector('.length-container');
+const lengthContainer = document.querySelector('#length-container');
 let lengthPara = document.createElement('p');
+const rainbowCheckbox = document.querySelector('#rainbow');
 
 function clearGrid(){
     while(grid.firstChild)

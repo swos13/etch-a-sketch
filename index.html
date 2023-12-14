@@ -8,10 +8,16 @@
 </head>
 <body>
     <script type="text/javascript" src="./script.js" defer></script>
-    <div class="length-container">
+    <div id="length-container">
         <p>Length</p>
-        <input type="range" min="1" max="100" value="16" class="slider"></input>
+        <input type="range" min="1" max="100" value="16" class="slider">
     </div>
+    <label class="toggle">
+        <div id="rainbow-container">
+            <span>Rainbow mode</span>
+            <input type="checkbox" id="rainbow">
+        </div>
+    </label>
     <div class="grid"></div>
 </body>
 </html>
